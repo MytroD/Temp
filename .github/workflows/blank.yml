@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set version for deploy
         run: |
-          echo VERSION=${GITHUB_REF#refs/*/} 
-          echo $VERSION | tr . - >> $GITHUB_ENV
-          echo ${{ env.VERSION }}
+          VERSION=${GITHUB_REF#refs/*/}
+          DEPLOY_VERSION=$(echo "$VERSION" |tr . -)
+          echo "$DEPLOY_VERSION" >> $GITHUB_ENV
+          
+          echo ${{  env.DEPLOY_VERSION}}
