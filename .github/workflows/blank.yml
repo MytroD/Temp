@@ -13,4 +13,4 @@ jobs:
           DEPLOY_VERSION=$(echo "$VERSION" |tr . -)
           echo "$DEPLOY_VERSION" >> $GITHUB_ENV
           
-          echo ${{  env.DEPLOY_VERSION}}
+          echo ${{  env.DEPLOY_VERSION  }}
