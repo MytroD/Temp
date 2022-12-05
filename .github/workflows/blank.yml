@@ -11,6 +11,6 @@ jobs:
         run: |
           VERSION=${GITHUB_REF#refs/*/}
           DEPLOY_VERSION=$(echo "$VERSION" |tr . -)
-          echo '$DEPLOY_VERSION' >> $GITHUB_ENV
+          echo "$DEPLOY_VERSION.zip" >> $GITHUB_ENV
           
           echo ${{  env.DEPLOY_VERSION  }}
