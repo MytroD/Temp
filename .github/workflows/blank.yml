@@ -10,5 +10,5 @@ jobs:
       - name: Set version for deploy
         run: |
           DEPLOY_VERSION=${GITHUB_REF#refs/*/}
-          echo $DEPLOY_VERSION | sed 's/./-/' >> $GITHUB_ENV
+          echo $DEPLOY_VERSION | sed 's;.;\-;g' >> $GITHUB_ENV
           echo ${{  env.DEPLOY_VERSION  }}    
