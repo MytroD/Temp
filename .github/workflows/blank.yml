@@ -10,7 +10,7 @@ jobs:
       - name: Set version for deploy
         run: |
           VERSION=${GITHUB_REF#refs/*/}
-          DEPLOY_VERSION='$(echo "$VERSION" |tr . -).zip'
+          DEPLOY_VERSION=$(echo "$VERSION" |tr . -)
 
           echo '$DEPLOY_VERSION=<<EOF'>> "$GITHUB_ENV"
           echo ${{  env.DEPLOY_VERSION  }}    
